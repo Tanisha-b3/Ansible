@@ -1,0 +1,47 @@
+---
+
+- name: Clean up any existing EpicBook deployment
+  become: true
+  file:
+    path: /apt/epicbook
+    state: absent
+- name: Create deployment directory
+  file:
+    path: /apt/epicbook
+    state: directory
+
+- name: Clone EpicBook repository
+  git:
+    repo: "{{ repo_url }}"
+    dest: /apt/epicbook
+    version: "{{ branch }}"
+    force: yes
+
+- name: Install npm dependencies
+  npm:
+    path: /apt/epicbook
+    production: yes
+
+- name: Create .env file
+  template:
+    src: .env.j2
+    dest: /apt/epicbook/.env
+    mode: 0600
+
+- name: Create config.json
+  template:
+    src: config.json.j2
+    dest: /apt/epicbook/config/config.json
+    mode: 0644
+
+- name: Configure systemd service
+  template:
+    src: epicbook.service.j2
+    dest: /etc/systemd/system/epicbook.service
+    mode: 0644
+
+- name: Enable and start EpicBook service
+  systemd:
+    name: epicbook
+    enabled: yes
+    state: restarted

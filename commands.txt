@@ -1,0 +1,717 @@
+    1  pwd
+    2  mkdir -p ~/ansible-onboarding && cd ~/ansible-onboarding
+    3  python3 -m venv .venv && source .venv/bin/activate
+    4  python -m pip install --upgrade pip
+    5  python -m pip install ansible ansible-lint yamllint
+    6  ansible --version
+    7  ansible-lint --version
+    8  mkdir -p ~/ansible-onboarding && cd ~/ansible-onboarding
+    9  python3 -m venv .venv && source .venv/bin/activate
+   10  python -m pip install --upgrade pip
+   11  python -m pip install ansible ansible-lint yamllint
+   12  ansible --version
+   13  ansible-lint --version
+   14  apt install python3.12-venv
+   15  sudo apt install python3.12-venv
+   16  python3 --version
+   17  sudo apt install python3-venv
+   18  sudo apt install python3.12 python3.12-venv python3.12-distutils -y
+   19  uname -a
+   20  sudo apt update --allow-releaseinfo-change
+   21  sudo apt install software-properties-common -y
+   22  sudo add-apt-repository universe -y
+   23  sudo add-apt-repository ppa:deadsnakes/ppa -y
+   24  sudo apt update
+   25  sudo apt install python3.12-venv
+   26  python3 -m venv .venv && source .venv/bin/activate
+   27  python -m pip install --upgrade pip
+   28  python -m pip install ansible ansible-lint yamllint
+   29  ansible --version
+   30  ansible-lint --version
+   31  python -m pip freeze > requirements.txt
+   32  mkdir .vscode/settings.json:
+   33  mkdir .vscode
+   34  cd .vscode
+   35  touch settings.json
+   36  vi settings.json
+   37  cd..
+   38  cd.
+   39  cd
+   40  cd ansible-onboarding
+   41  touch .editorconfig
+   42  vi .editorconfig
+   43  touch ansible.cfg
+   44  code.
+   45  code .
+   46  ssh-keygen -t ed25519 -C "tanisha" -N "" -f ~/.ssh/id_ed25519
+   47  eval "$(ssh-agent -s)"
+   48  ssh-add ~/.ssh/id_ed25519
+   49  ls
+   50  ssh-keygen -t ed25519 -C "tanisha" -N "" -f ~/ansible-onboarding/.ssh/id_ed25519
+   51  git config --global user.name  "Tanisha"
+   52  git config --global user.email "tanishaborana05@gmail.com"
+   53  git config --global init.defaultBranch main
+   54  python -m pip install pre-commit
+   55  cat > .pre-commit-config.yaml <<'YAML'
+   56  repos:
+   57    - repo: https://github.com/adrienverge/yamllint
+   58      rev: v1.35.1
+   59      hooks:
+   60        - id: yamllint
+   61    - repo: https://github.com/ansible/ansible-lint
+   62      rev: v24.6.1
+   63      hooks:
+   64        - id: ansible-lint
+   65  YAML
+   66  pre-commit install
+   67  ansible --version
+   68  ansible-lint --version
+   69  pre-commit run --all-files
+   70  mkdir -p cache
+   71  ls -ld cache
+   72  ansible-lint --version
+   73  pre-commit run --all-files
+   74  git --version
+   75  git init
+   76  git add .
+   77  git commit -m "Initial Ansible onboarding setup"
+   78  pre-commit run --all-files
+   79  ssh-add -l
+   80  terraform init
+   81  sudo snap install terraform
+   82  sudo snap install terraform --classic
+   83  terraform init
+   84  cd terraform
+   85  terraform init
+   86  az login
+   87  cd terraform
+   88  terraform init
+   89  terraform plan
+   90  az login
+   91  az login --use-device-code
+   92  az account clear
+   93  az logout
+   94  az login
+   95  az login --use-device-code
+   96  %LOCALAPPDATA%\.IdentityService
+   97  az account show
+   98  az login
+   99  cd terraform
+  100  terraform init
+  101  terraform plan
+  102  cd
+  103  cd ansible-onboarding
+  104  ssh-keygen -t rsa -b 4096
+  105  terraform plan
+  106  cd terraform
+  107  terraform plan
+  108  terraform apply
+  109  ssh -i ~/.ssh/id_ed25519 azureuser@52.160.1.10 'whoami; uptime'
+  110  terraform apply
+  111  ssh azureuser@172.173.144.224
+  112  ssh -i ~/ansible-onboarding/epicbook.pub azureuser@172.173.144.224
+  113  ssh azureuser@172.173.144.224
+  114  ssh -i ~/ansible-onboarding/epicbook.pub azureuser@172.173.144.224
+  115  terraform apply
+  116  terraform DESTROY
+  117  terraform destroy
+  118  source /home/tanis/ansible-onboarding/.venv/bin/activate
+  119  cd epicbook-terraform
+  120  cd epicbook_terraform
+  121  terraform init
+  122  az group create --name tfstate-rg --location eastus && az storage account create --name epicbooktfstate1162 --resource-group tfstate-rg --location eastus --sku Standard_LRS --encryption-services blob && az storage container create --name tfstate --account-name epicbooktfstate1162 
+  123  terraform init
+  124  az group create --name tfstate2-rg --location eastus && az storage account create --name epicbooktfstate2 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --encryption-services blob && az storage container create --name tfstate --account-name epicbooktfstate2 
+  125  terraform init
+  126  terraform plan
+  127  terraform workspace new dev
+  128  terraform workspace select dev
+  129  terraform plan
+  130  terraform apply
+  131  ssh azureuser@74.225.168.255
+  132  ssh -i ~/ansible-onboarding/terraform/ssh/epicbook  azureuser@74.225.168.255
+  133  ssh -i ~/ansible-onboarding/terraform/ssh/epicbook azureuser@74.225.168.255
+  134  ssh -i ~/ansible-onboarding/terraform/ssh/epicbook.pub azureuser@74.225.168.255
+  135  ssh -i ~/ansible-onboarding/terraform/ssh/epicbook epicbookadmin@74.225.168.255
+  136  ./generate_inventory.sh
+  137  ./compute/generate_inventory.sh
+  138  ./generate_inventory.sh
+  139  chmod +x generate_inventory.sh
+  140  ./generate_inventory.sh
+  141  cd ..
+  142  cd ansible
+  143  ansible-playbook -i inventory.ini site.yaml
+  144  ansible-playbook -i inventory.ini site.yml
+  145  ansible-playbook -i inventory.ini site.yml
+  146  cd ..
+  147  cd epicbook_terraform
+  148  terraform plan
+  149  terraform apply
+  150  terraform destroy
+  151  terraform apply
+  152  ./generate_inventory.sh
+  153  terraform apply
+  154  terraform plan
+  155  terraform apply
+  156  terraform destroy
+  157  terraform apply
+  158  ./generate_inventory.sh
+  159  terraform output -raw mysql_password
+  160  cd..
+  161  cd ..
+  162  cd ansible
+  163  ansible-playbook -i inventory.ini site.yml
+  164  ssh -i ~/ansible-onboarding/terraform/ssh/epicbook epicbookadmin@4.213.137.9
+  165  ansible-playbook -i inventory.ini site.yml
+  166  az mysql flexible-server firewall-rule create   --resource-group dev-epicbook-rg-665aa582   --name dev-epicbook-mysql-16fae56e   --rule-name allow-ansible-controller   --start-ip-address $(curl -s ifconfig.me)   --end-ip-address $(curl -s ifconfig.me)
+  167  az mysql flexible-server firewall-rule create --resource-group dev-epicbook-rg-16fae56e --name dev-epicbook-mysql-16fae56e --rule-name allow-ansible-controller --start-ip-address $(curl -s ifconfig.me) --end-ip-address $(curl -s ifconfig.me)
+  168  az mysql flexible-server show --name dev-epicbook-mysql-16fae56e --resource-group dev-epicbook-rg-16fae56e --query "network.publicNetworkAccess" -o tsv
+  169  az mysql flexible-server update   --name dev-epicbook-mysql-16fae56e   --resource-group dev-epicbook-rg-16fae56e   --public-network-access Enabled
+  170  az mysql flexible-server update   --name dev-epicbook-mysql-16fae56e   --resource-group dev-epicbook-rg-16fae56e   --set publicNetworkAccess=Enabled
+  171  az mysql flexible-server show   --name dev-epicbook-mysql-16fae56e   --resource-group dev-epicbook-rg-16fae56e   --query "network.publicNetworkAccess" -o tsv
+  172  ssh -i ~/ansible-onboarding/terraform/ssh/epicbook epicbookadmin@4.213.137.9
+  173  cd ..
+  174  scp -i ~/ansible-onboarding/terraform/ssh/epicbook -r ~/ansible-onboarding/ansible epicbookadmin@4.213.137.9:~/
+  175  ssh -i ~/ansible-onboarding/terraform/ssh/epicbook epicbookadmin@4.213.137.9
+  176  exit
+  177  history
+  178  ls
+  179  ansible all -i inventory.ini -m ping
+  180  cd ansible-onboardinf
+  181  cd ansible-onboarding
+  182  cd ansible
+  183  ansible all -i inventory.ini -m ping
+  184  ansible all -i inventory.txt -a "uptime"
+  185  ansible all -i inventory.ini -a "uptime"
+  186  ansible all -i inventory.ini -b -m apt -a 'name=nginx state=present'
+  187  ansible all -i inventory.ini -b -m service -a 'name=nginx state=started'
+  188  ansible all -i inventory.ini -m shell -a "whoami"
+  189  ansible web -i inventory.ini -m shell -a "systemctl is-active nginx; systemctl status nginx --no-pager" --become
+  190  ansible all -i inventory.ini -m shell -a "df -h"
+  191  ansible all -i inventory.ini -m shell -a "free -m"
+  192  ansible all -i inventory.ini -m shell -a "curl -s ifconfig.me"
+  193  ansible web -i inventory.ini -m systemd -a "name=nginx state=stopped enabled=no" --become
+  194  ansible all -i inventory.ini -b -a "apt update -y"
+  195  ansible all -i inventory.ini -b -a "apt install -y htop"
+  196  cd..
+  197  cd ..
+  198  cd terraform
+  199  terraform distroy
+  200  terraform destroy
+  201  ssh -i ~/ansible-onboarding/terraform/ssh/epicbook epicbookadmin@74.225.168.255
+  202  ssh -i ~/ansible-onboarding/terraform/ssh/epicbook epicbookadmin@4.213.137.9
+  203  terraform destroy
+  204  ..
+  205  cd terraform
+  206  terraform init
+  207  terraform plan
+  208  terraform apply
+  209  ssh azureuser@52.191.57.2
+  210  ssh -i ~/ansible-onboarding/terraform/ssh/epicbook.pub azureuser@52.191.57.2
+  211  ssh -i ~/ansible-onboarding/terraform/ssh/epicbook azureuser@52.191.57.2
+  212  ansible all -i inventory.ini -m ping
+  213  sudo apt install ansible-core
+  214  chmod 600 ~/ansible-onboarding/terraform/ssh/epicbook
+  215  ansible all -i inventory.ini -m ping
+  216  cd..
+  217  cd
+  218  cd ansible-onboarding 
+  219  cd ansible
+  220  ansible all -i inventory.ini -m ping
+  221  ssh -i ~/ansible-onboarding/terraform/ssh/epicbook azureuser@ 172.191.92.185
+  222  ssh -i ~/ansible-onboarding/terraform/ssh/epicbook azureuser@172.191.92.185
+  223  ssh -i ~/ansible-onboarding/terraform/ssh/epicbook azureuser@20.51.155.70
+  224  40.121.203.91
+  225  ssh -i ~/ansible-onboarding/terraform/ssh/epicbook azureuser@40.121.203.91
+  226  ansible all -i inventory.ini -m ping
+  227  chmod 600 ~/ansible-onboarding/terraform/ssh/epicbook
+  228  ansible all -i inventory.ini -m ping
+  229  ./generate_inventory.sh
+  230  ls -l generate_inventory.sh
+  231  chmod +x generate_inventory.sh
+  232  ./generate_inventory.sh
+  233  cd ..
+  234  cd terraform 
+  235  ./generate_inventory.sh
+  236  sudo apt update
+  237  sudo apt install jq -y
+  238  ./generate_inventory.sh
+  239  cd ..
+  240  cd ansible
+  241  ansible all -i inventory.ini -m ping
+  242  ansible all -i inventory.ini -m shell -a "whoami"
+  243  ansible all -i inventory.ini -m shell -a "uptime"
+  244  ansible all -i inventory.ini -m apt -a "name=htop state=present update_cache=yes" --become
+  245  ansible web -i inventory.ini -m apt -a "name=nginx state=present update_cache=yes" --become
+  246  ansible web -i inventory.ini -m systemd -a "name=nginx enabled=yes state=started" --become
+  247  ansible web -i inventory.ini -m shell -a "systemctl is-active nginx; systemctl status nginx --no-pager" --become
+  248  ansible all -i inventory.ini -m shell -a "df -h"
+  249  ansible all -i inventory.ini -m shell -a "free -m"
+  250  terraform outputs
+  251  terraform output
+  252  cd ..
+  253  cd terraform
+  254  terraform output
+  255  terraform plan
+  256  terraform apply
+  257  terraform destroy
+  258  cd ..
+  259  cd static_websites
+  260  ansible-playbook -i inventory.ini site.yml
+  261  terraform destroy
+  262  cd ..
+  263  cd terraform
+  264  terraform destroy
+  265  cd a
+  266  ansible-playbook -i inventory.ini site.yml
+  267  cd ansible-onboardinf
+  268  cd ansible-onboarding
+  269  cd ansible
+  270  ansible-playbook -i inventory.ini site.yml
+  271  cd ..
+  272  cd epicnook_terraform
+  273  cd epicbook_terraform
+  274  terraform destroy
+  275  ls
+  276  cd ansible-onboarding
+  277  code .
+  278  cd epicbook_terraform
+  279  az group create --name tfstate2-rg --location eastus && az storage account create --name epicbooktfstate2 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --encryption-services blob && az storage container create --name tfstate --account-name epicbooktfstate2
+  280  az login && az group create --name tfstate2-rg --location eastus && az storage account create --name epicbooktfstate2 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --encryption-services blob && az storage container create --name tfstate --account-name epicbooktfstate2 --auth-mode login
+  281  az login --tenant "89f8419c-b5b4-473e-958b-a9e6f6a51b5c" --scope "https://storage.azure.com/.default"
+  282  az login && az group create --name tfstate2-rg --location eastus && az storage account create --name epicbooktfstate2 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --encryption-services blob && az storage container create --name tfstate --account-name epicbooktfstate2 --auth-mode login
+  283  az logout
+  284  az login --tenant "89f8419c-b5b4-473e-958b-a9e6f6a51b5c" --scope "https://storage.azure.com/.default"
+  285  az logout
+  286  az login
+  287  az logout
+  288  az account clear
+  289  az login
+  290  az account show
+  291  az login
+  292  terraform iniy
+  293  terraform init
+  294  cd epicbook_terraform
+  295  git init
+  296  terraform plan
+  297  cd ..
+  298  cd terraform
+  299  git init
+  300  terraform iniy
+  301  terraform init
+  302  terraform plan
+  303  terraform apply
+  304  cd..
+  305  cd ..
+  306  cd minifinance
+  307  cd minifinance_deployment
+  308  cd ansible
+  309  ansible-playbook -i inventory.ini site.yml
+  310  terraform destroy
+  311  cd//
+  312  cd ..
+  313  cd terraform
+  314  terraform destroy
+  315  cd ansible-onboarding
+  316  code .
+  317  cd ansible-onboardinf
+  318  cd ansible-onboarding
+  319  cd terraform
+  320  az login
+  321  cd ..
+  322  cd epicbook_terraform
+  323  az login && az group create --name tfstate2-rg --location eastus && az storage account create --name epicbooktfstate2 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --encryption-services blob && az storage container create --name tfstate --account-name epicbooktfstate2 --auth-mode login
+  324  az login
+  325  az login && az group create --name tfstate2-rg --location eastus && az storage account create --name epicbooktfstate2 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --encryption-services blob && az storage container create --name tfstate --account-name epicbooktfstate2 --auth-mode login
+  326  az account list -o table
+  327  az account set --subscription "9ea4b7b4-36f0-4d7e-b0cf-98c2598750b7"
+  328  az login && az group create --name tfstate2-rg --location eastus && az storage account create --name epicbooktfstate2 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --encryption-services blob && az storage container create --name tfstate --account-name epicbooktfstate2 --auth-mode login
+  329  az account set --subscription "9ea4b7b4-36f0-4d7e-b0cf-98c2598750b7"
+  330  az login --tenant a9ab408e-1a45-459f-bb72-d0f9002da66c
+  331  az account show
+  332  az group create --name tfstate2-rg --location eastus
+  333  az storage account create --name epicbooktfstate2 --resource-group tfstate2-rg --location eastus --sku Sta
+  334  az storage account create --name epicbooktfstate2 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --encryption-services blob
+  335  az account list --output table
+  336  az logout
+  337  az account clear
+  338  az login --tenant a9ab408e-1a45-459f-bb72-d0f9002da66c
+  339  az account show
+  340  az group create --name tfstate2-rg --location eastus
+  341  az storage account create --name epicbooktfstate2 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --encryption-services blob
+  342  az provider register --namespace Microsoft.Storage
+  343  az provider show -n Microsoft.Storage
+  344  az storage account create --name epicbooktfstate2 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --encryption-services blob
+  345  az group create --name tfstate2-rg --location eastus
+  346  az storage account create --name epicbooktfstate2 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --encryption-services blob
+  347  az storage account create --name epicbooktfstate10 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --encryption-services blob
+  348  az storage container create --name tfstate --account-name epicbooktfstate2
+  349  az storage container create --name tfstate --account-name epicbooktfstate10
+  350  terraform init
+  351  terraform init -reconfigure
+  352  terraform plan
+  353  terraform workspace new dev
+  354  terraform workspace switch dev
+  355  terraform workspace select dev
+  356  terraform plan
+  357  az provider register --namespace Microsoft.DBforMySQL
+  358  az provider register --namespace Microsoft.Network
+  359  az provider register --namespace Microsoft.Resources
+  360  az provider register --namespace Microsoft.Compute
+  361  az provider register --namespace Microsoft.Storage
+  362  az provider register --namespace Microsoft.Web
+  363  terraform plan
+  364  terraform apply
+  365  ./generate_inventory.sh
+  366  terraform output -raw mysql_password
+  367  cd ..
+  368  cd ansible
+  369  ansible-playbook -i inventory.ini site.yml
+  370  ansible-galaxy collection install community.mysql
+  371  sudo apt install -y python3-pymysql mysql-client
+  372  ansible-playbook -i inventory.ini site.yml
+  373  az mysql flexible-server show --name bookstore --resource-group <your_resource_group> --query "publicNetworkAccess"
+  374  az mysql flexible-server show --name bookstore --resource-group dev-epicbook-rg-27bbb34c --query "publicNetworkAccess"az mysql flexible-server show --name bookstore --resource-group dev-epicbook-rg-27bbb34c --query "publicNetworkAccess" -o ts
+  375  ansible-playbook -i inventory.ini site.yml
+  376  az mysql flexible-server show --name bookstore --resource-group dev-epicbook-rg-27bbb34c --query "publicNetworkAccess" -o tsv
+  377  az account show --query "name"
+  378  "Subscription 1"
+  379  az mysql flexible-server list -o table
+  380  az mysql flexible-server show --name bookstore --resource-group dev-epicbook-rg-27bbb34c --query "publicNetworkAccess" -o tsv
+  381  az mysql flexible-server update --name bookstore --resource-group dev-epicbook-rg-27bbb34c --public-access All
+  382  az mysql flexible-server update --name bookstore --resource-group dev-epicbook-rg-27bbb34c --public-access 0.0.0.0-255.255.255.255
+  383  az mysql flexible-server update --name bookstore --resource-group dev-epicbook-rg-27bbb34c --public-network-access Enabled
+  384  az version
+  385  az mysql flexible-server update --name bookstore --resource-group dev-epicbook-rg-27bbb34c --public-access Enabled
+  386  az mysql flexible-server show --name bookstore --resource-group dev-epicbook-rg-27bbb34c --query "{state:state, publicAccess:publicNetworkAccess}" -o table
+  387  az upgrade
+  388  sudo apt update && sudo apt install --only-upgrade azure-cli -y
+  389  az version
+  390  az mysql flexible-server update --name bookstore --resource-group dev-epicbook-rg-27bbb34c --public-network-access Enabled
+  391  az mysql flexible-server firewall-rule create   --name allow-all   --resource-group dev-epicbook-rg-27bbb34c   --server bookstore   --start-ip-address 0.0.0.0   --end-ip-address 255.255.255.255
+  392  az mysql flexible-server firewall-rule create   --resource-group dev-epicbook-rg-27bbb34c   --name allow-all   --rule-name allow-all-rule   --start-ip-address 0.0.0.0   --end-ip-address 255.255.255.255
+  393  az mysql flexible-server firewall-rule create   --resource-group dev-epicbook-rg-27bbb34c   --name bookstore.mysql.database.azure.com   --rule-name allow-all-rule   --start-ip-address 0.0.0.0   --end-ip-address 255.255.255.255
+  394  az mysql flexible-server firewall-rule create   --resource-group dev-epicbook-rg-27bbb34c   --name bookstore   --rule-name allow-all-rule   --start-ip-address 0.0.0.0   --end-ip-address 255.255.255.255
+  395  az mysql flexible-server list -o table
+  396  ansible-playbook -i inventory.ini site.yml
+  397  mysql -h bookstore.mysql.database.azure.com -u epicbookadmin@bookstore -p
+  398  mysql -h bookstore.mysql.database.azure.com -u epicbookadmin@bookstore.mysql.database.azure.com -p
+  399  Enter password:
+  400  ERROR 1045 (28000): Access denied for user 'epicbookadmin@bookstore.mysql.database.azure.com'@'49.43.2.168' (using password: YES)
+  401  tanis@DESKTOP-80U4T76:~/ansible-onboarding/ansible$
+  402  mysql -h bookstore.mysql.database.azure.com -u epicbookadmin@bookstore.mysql.database.azure.com -p
+  403  Enter password:
+  404  ERROR 1045 (28000): Access denied for user 'epicbookadmin@bookstore.mysql.database.azure.com'@'49.43.2.168' (using password: YES)
+  405  az mysql flexible-server show   --name bookstore   --resource-group dev-epicbook-rg-27bbb34c   --query "administratorLogin" -o tsv
+  406  mysql -h bookstore.mysql.database.azure.com -u epicbookadmin@bookstore -p
+  407  az mysql flexible-server update   --name bookstore   --resource-group dev-epicbook-rg-27bbb34c   --admin-password Epicbook@2025!
+  408  mysql -h bookstore.mysql.database.azure.com -u epicbookadmin@bookstore -p
+  409  mysql -h bookstore.mysql.database.azure.com -u epicbookadmin -p
+  410  ansible-playbook -i inventory.ini site.yml
+  411  sudo ls -R /opt/epicbook | grep db
+  412  ansible-playbook -i inventory.ini site.yml
+  413  ssh azureuser@74.225.239.95
+  414  ssh epicbookadmin@74.225.239.95
+  415  ssh -i home/tanis/ansible-onboarding/terraform/ssh/epicbook epicbookadmin@74.225.239.95
+  416  ssh -i ~/ansible-onboarding/terraform/ssh/epicbook epicbookadmin@74.225.239.95
+  417  ansible-playbook -i inventory.ini site.yml
+  418  sudo systemctl status epicbook
+  419  sudo journalctl -u epicbook --no-pager --lines 50
+  420  sudo netstat -tulnp | grep node
+  421  sudo ss -tulnp | grep node
+  422  cd ..
+  423  cd epicbook_terraform
+  424  terraform destroy
+  425  cd epicbook_terraform
+  426  cd ..
+  427  cd terraform
+  428  terraform plan
+  429  terraform iniy
+  430  terraform init
+  431  terraform plan
+  432  terraform apply
+  433  ssh azureuser@52.168.173.121
+  434  ssh-copy-id -i ~/ansible-onboarding/terraform/ssh/epicbook.pub azureuser@52.168.173.121
+  435  ssh azureuser@52.168.173.121
+  436  ssh-copy-id -i ~/ansible-onboarding/terraform/ssh/epicbook azureuser@52.168.173.121
+  437  ssh azureuser@52.168.173.121
+  438  ssh -i ~/ansible-onboarding/terraform/ssh/epicbook azureuser@52.168.173.121
+  439  ssh -i ~/ansible-onboarding/.ssh/id_ed25519.pub  azureuser@52.168.173.121
+  440  ssh -i ~/ansible-onboarding/.ssh/id_ed25519  azureuser@52.168.173.121
+  441  ssh -i ~/ansible-onboarding/.ssh/id_ed25519 azureuser@52.168.173.121
+  442  pws
+  443  pwd
+  444  clear
+  445  ls 
+  446  cd ansible-onboarding
+  447  ls
+  448  cp -r ~/ansible-onboarding/epicbook_terraform/* /mnt/c/Users/hp/Desktop/Epicbook/ 
+  449  cd ~
+  450  ls -la
+  451  ls
+  452  cd ansible-onboarding
+  453  ls
+  454  cd .ssh
+  455  ssh-keygen -t rsa -b 4096 -C "tanishaborana05@gmail.com"
+  456  clear
+  457  cd..
+  458  cd ..
+  459  clear
+  460  cd terraform
+  461  terraform init
+  462  terraform plan
+  463  terraform apply
+  464  cd ..
+  465  ssh -i ~/ansible-onboarding/.ssh/id_rsa azureuser@172.171.194.20
+  466  ssh-copy-id -i ~/ansible-onboarding/.ssh/id_rsa.pub azureuser@172.171.194.20
+  467  ssh azureuser@172.171.194.20
+  468  ssh-copy-id -i ~/ansible-onboarding/.ssh/id_rsa azureuser@172.171.194.20
+  469  ssh azureuser@172.171.194.20
+  470  ssh-copy-id -i ~/ansible-onboarding/.ssh/id_rsa azureuser@172.171.194.20
+  471  ssh azureuser@172.171.194.20
+  472  ssh -i ~/ansible-onboarding/.ssh/id_rsa azureuser@
+  473  ssh azureuser@172.171.194.20
+  474  ssh -i ~/ansible-onboarding/.ssh/id_rsa azureuser@172.171.194.20
+  475  ssh azureuser@172.171.194.20
+  476  ssh -i ~/ansible-onboarding/.ssh/id_rsa azureuser@172.171.194.20
+  477  cd ..sh
+  478  cd .ssh
+  479  ls
+  480  cd ..
+  481  cd ansible_inventoryCommands
+  482  cd ansible_inventoryComands
+  483  ansible all -i inventory.ini -m ping
+  484  ansible all -i inventory.ini -m shell -a "whoami"
+  485  ansible all -i inventory.ini -m shell -a "uptime"
+  486  ansible all -i inventory.ini -m apt -a "name=htop state=present update_cache=yes" --become
+  487  ansible web -i inventory.ini -m apt -a "name=nginx state=present update_cache=yes" --become
+  488  ansible web -i inventory.ini -m systemd -a "name=nginx enabled=yes state=started" --become
+  489  ansible web -i inventory.ini -m shell -a "systemctl is-active nginx; systemctl status nginx --no-pager" --become
+  490  ssh-copy-id -i ~/ansible-onboarding/.ssh/id_rsa azureuser@172.171.194.20
+  491  ssh azureuser@172.171.194.20
+  492  ansible web -i inventory.ini -m systemd -a "name=nginx enabled=yes state=started" --become
+  493  ansible web -i inventory.ini -m shell -a "systemctl is-active nginx; systemctl status nginx --no-pager" --become
+  494  ansible all -i inventory.ini -m shell -a "df -h"
+  495  ansible all -i inventory.ini -m shell -a "free -m"
+  496  ansible all -i inventory.ini -m shell -a "htop"
+  497  terraform destroy
+  498  cd ..
+  499  cd epicbook_terraform
+  500  terraform destroy
+  501  cd ..
+  502  cd terraform
+  503  terraform destroy
+  504  source /home/tanis/ansible-onboarding/.venv/bin/activate
+  505  cd epicbook_terraform
+  506  terraform apply
+  507  az group create --name tfstate2-rg --location eastus && az storage account create --name epicbooktfstate10 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --kind StorageV2 && az storage container create --name tfstate --account-name epicbooktfstate10
+  508  terraform apply
+  509  terraform init
+  510  terraform force-unlock af0a5c64-d0ba-7404-7dc7-dda963bd56ba && terraform init
+  511  terraform force-unlock af0a5c64-d0ba-7404-7dc7-dda963bd56ba 
+  512  az storage blob lease break   --blob epicbook.terraform.tfstateenv:dev   --container-name tfstate   --account-name epicbooktfstate10   --delete-snapshots include
+  513  az storage blob delete   --account-name epicbooktfstate10   --container-name tfstate   --name "epicbook.terraform.tfstateenv:dev"
+  514  az group create --name tfstate2-rg --location eastus && az storage account create --name epicbooktfstate10 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --kind StorageV2 && az storage container create --name tfstate --account-name epicbooktfstate10
+  515  terraform init
+  516  terraform apply
+  517  terraform create new dev
+  518  terrafor -help
+  519  terraform -help
+  520  terraform workspace new dev
+  521  terraform workspace select dev
+  522  terraform apply
+  523  ./generate_inventory.sh
+  524  cd ..
+  525  cd ansible
+  526  mysql "mysql://epicbookadmin:Epicbook@2025%21@bookstore.mysql.database.azure.com:3306/bookstore"
+  527  mysql -h bookstore.mysql.database.azure.com -u epicbookadmin@bookstore -p
+  528  ansible-galaxy collection install community.mysql
+  529  mysql -h bookstore.mysql.database.azure.com -u epicbookadmin@bookstore -p
+  530  az mysql flexible-server firewall-rule create \
+  531    --name bookstore \
+  532    --resource-group dev-epicbook-rg-ddc90250 \
+  533    --rule-name allow-epicbook-vm \
+  534    --start-ip-address  \
+  535    --end-ip-address
+  536  ssh -i ~/ansible-onboarding/.ssh/id_rsa epicbookadmin@4.213.73.178
+  537  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-ddc90250   --rule-name allow-epicbook-vm   --start-ip-address 4.213.73.178   --end-ip-address 4.213.73.178
+  538  ansible-playbook -i inventory.ini site.yml
+  539  ssh -i ~/ansible-onboarding/.ssh/id_rsa epicbookadmin@4.213.73.178
+  540  ansible-playbook -i inventory.ini site.yml
+  541  ssh-copy-id -i ~/.ssh/id_rsa epicbookadmin@4.213.73.178
+  542  ssh-copy-id -i ~/ansible-onboarding/.ssh/id_rsa epssh -i ~/ansible-onboarding/.ssh/id_rsa epicbookadmin@4.213.73.178
+  543  icbookadmin@4.213.73.178
+  544  ssh -i ~/ansible-onboarding/.ssh/id_rsa epicbookadmin@4.213.73.178
+  545  ansible-playbook -i inventory.ini site.yml
+  546  chmod 700 ~/ansible-onboarding/.ssh
+  547  chown -R $(whoami):$(whoami) ~/ansible-onboarding/.ssh
+  548  ssh -i ~/ansible-onboarding/.ssh/id_rsa epicbookadmin@4.213.73.178
+  549  ansible web -i inventory.ini -m ping -vvv
+  550  ansible-playbook -i inventory.ini site.yml
+  551  curl ifconfig.me
+  552  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-ddc90250   --rule-name allow-local-tanisha   --start-ip-address 49.43.2.126   --end-ip-address 49.43.2.126
+  553  ansible-playbook -i inventory.ini site.yml
+  554  mysql -h bookstore.mysql.database.azure.com -u epicbookadmin -p
+  555  ansible-playbook -i inventory.ini site.yml
+  556  ssh -i ~/ansible-onboarding/.ssh/id_rsa epicbookadmin@4.213.73.178
+  557  ansible-playbook -i inventory.ini site.yml
+  558  ssh -i ~/ansible-onboarding/.ssh/id_rsa epicbookadmin@4.213.73.178
+  559  ansible-playbook -i inventory.ini site.yml
+  560  az mysql flexible-server show --name bookstore --resource-group dev-epicbook-rg-ddc90250 --query "network.publicNetworkAccess" -o tsv
+  561  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-ddc90250   --rule-name allow-epicbook-vm-private   --start-ip-address 10.0.2.0/24   --end-ip-address 10.0.2.0/24
+  562  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-ddc90250   --rule-name allow-epicbook-vm-private   --start-ip-address 10.0.2.0   --end-ip-address 10.0.2.0
+  563  az network private-dns zone show --name privatelink.mysql.database.azure.com -g dev-epicbook-rg-ddc90250
+  564  az network private-dns link vnet list --zone-name privatelink.mysql.database.azure.com -g dev-epicbook-rg-ddc90250
+  565  mysql -h bookstore.mysql.database.azure.com -u epicbookadmin -p
+  566  ansible-playbook -i inventory.ini site.yml
+  567  ping bookstore.mysql.database.azure.com
+  568  nslookup bookstore.mysql.database.azure.com
+  569  ansible-playbook -i inventory.ini site.yml
+  570  ssh -i /home/tanis/ansible-onboarding/.ssh/id_rsa epicbookadmin@4.213.73.178
+  571  ansible-playbook -i inventory.ini site.yml
+  572  # Check if MySQL is running on the target
+  573  ansible 4.213.73.178 -m shell -a "systemctl status mysql" -b
+  574  # Check if SQL files exist
+  575  ansible 4.213.73.178 -m shell -a "ls -la /opt/epicbook/db/" -b
+  576  # Test basic MySQL connectivity
+  577  ansible 4.213.73.178 -m shell -a "nc -z {{ mysql_host }} 3306 && echo 'Port open' || echo 'Port closed'" -b
+  578  ansible 4.213.73.178 -m shell -a "systemctl status mysql" -b
+  579  ansible -i inventory.ini 4.213.73.178 -m shell -a "systemctl status mysql" -b
+  580  # List available hosts
+  581  ansible --list-hosts all
+  582  # Show current inventory file being used
+  583  ansible --version
+  584  # Check if you have an ansible.cfg file
+  585  cat ansible.cfg
+  586  ansible-playbook -i inventory.ini site.yml
+  587  az mysql flexible-server parameter set   --resource-group tfstate2-rg   --server-name bookstore   --name require_secure_transport   --value OFF
+  588  sudo apt-get update && sudo apt-get install -y ca-certificates
+  589  ansible-playbook -i inventory.ini site.yml
+  590  az mysql flexible-server parameter set   --resource-group tfstate2-rg   --server-name bookstore   --name require_secure_transport   --value ON
+  591  ansible-playbook -i inventory.ini site.yml
+  592  az mysql flexible-server parameter set   --resource-group tfstate2-rg   --server-name bookstore   --name require_secure_transport   --value Off
+  593  ansible-playbook -i inventory.ini site.yml
+  594  ls -l /var/www/epicbook/db/
+  595  ansible-playbook -i inventory.ini site.yml
+  596  ssh -i /home/tanis/ansible-onboarding/.ssh/id_rsa epicbookadmin@4.213.73.178
+  597  ansible-playbook -i inventory.ini site.yml
+  598  ssh -i /home/tanis/ansible-onboarding/.ssh/id_rsa epicbookadmin@4.213.73.178
+  599  ansible-playbook -i inventory.ini site.yml
+  600  history
+  601  cd ..
+  602  cd epicbook_terraform
+  603  terraform destroy
+  604  terraform apply
+  605  ./generate_inventory.sh
+  606  cd ..
+  607  cd ansible
+  608  ansible-playbook -i inventory.ini site.yml
+  609  ssh -i /home/tanis/ansible-onboarding/.ssh/id_rsa epicbookadmin@4.247.151.100
+  610  ansible-playbook -i inventory.ini site.yml
+  611  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group mysql_connection_string = <sensitive>
+  612  mysql_database = "bookstore"
+  613  mysql_fqdn = <sensitive>
+  614  mysql_password = <sensitive>
+  615  mysql_username = <sensitive>
+  616  resource_group_name = "dev-epicbook-rg-bef3a640"
+  617  vm_public_ip = "4.247.151.100"
+  618  website_url = "http://4.247.151.100"
+  619  (.venv) tanis@DESKTOP-80U4T76:~/ansible-onboarding/epicbook_terraform$ ./generate_inventory.sh
+  620  🔧 Generating Ansible inventory...
+  621  ✅ inventory.ini created successfull   --rule-name allow-local-tanisha   --start-ip-address 49.43.2.126   --end-ip-address 49.43.2.126
+  622  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-ddc90250   --rule-name allow-local-tanisha   --start-ip-address 49.43.2.126   --end-ip-address 49.43.2.126   
+  623  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-bef3a6340   --rule-name allow-local-tanisha   --start-ip-address 49.43.2.126   --end-ip-address 49.43.2.126   
+  624  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-bef3a6340 --rule-name allow-local-tanisha   --start-ip-address 49.43.2.126   --end-ip-address 49.43.2.126   
+  625  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-bef3a640 --rule-name allow-local-tanisha   --start-ip-address 49.43.2.126   --end-ip-address 49.43.2.126   
+  626  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-ddc90250   --rule-name allow-epicbook-vm-private   --start-ip-address 10.0.2.0   --end-ip-address 10.0.2.0
+  627  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-bef3a640   --rule-name allow-epicbook-vm-private   --start-ip-address 10.0.2.0   --end-ip-address 10.0.2.0
+  628  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-bef3a640  --rule-name allow-epicbook-vm-private   --start-ip-address 10.0.2.0   --end-ip-address 10.0.2.0
+  629  ansible-playbook -i inventory.ini site.yml
+  630  ssh azureuser@4.247.151.100
+  631  ssh ~/ansible-onboarding/.ssh/id_rsa azureuser@4.247.151.100
+  632  ssh ~/ansible-onboarding/.ssh/id_rsa epicbookadmin@4.247.151.100
+  633  ssh -i  ~/ansible-onboarding/.ssh/id_rsa epicbookadmin@4.247.151.100
+  634  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-ddc90250   --rule-name allow-epicbook-vm-private   --start-ip-address 4.247.151.100   --end-ip-address 4.247.151.100
+  635  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-bef3a640   --rule-name allow-epicbook-vm-private   --start-ip-address 4.247.151.100   --end-ip-address 4.247.151.100
+  636  ssh ~/ansible-onboarding/.ssh/id_rsa epicbookadmin@4.247.151.100
+  637  ssh -i  ~/ansible-onboarding/.ssh/id_rsa epicbookadmin@4.247.151.100
+  638  ansible-playbook -i inventory.ini site.yml
+  639  sudo apt install ca-certificates -y
+  640  ansible-playbook -i inventory.ini site.yml
+  641  history
+  642  cd ..
+  643  cd epicbook_terraform
+  644  terraform destroy
+  645  cd epicbook_terraform
+  646  terraform destroy
+  647  terraform destroy -lock= false
+  648  terraform destroy -lock=false
+  649  lss
+  650  ls
+  651  cd ansible-onboarding
+  652  ls
+  653  cp -r ~/ansible-onboading/epicbook_terraform/* /mnt/c/Users/hp/Desktop/epic
+  654  cd ..
+  655  pwd
+  656  cd ansible-onboarding
+  657  cp -r ~/ansible-onboarding/epicbook_terraform/* /mnt/c/Users/hp/Desktop/epic
+  658  cp -r ~/* /mnt/c/Users/hp/Desktop/tanisha
+  659  cp -r ~/ansible-onboarding/ansible/* /mnt/c/Users/hp/Desktop/tanisha
+  660  cd terraform_epicbook
+  661  cd epicbook_terraform
+  662  terraform destroy -lock=false
+  663  az storage account create --name epicbooktfstate2 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --encryption-services blob
+  664  az login && az group create --name tfstate2-rg --location eastus && az storage account create --name epicbooktfstate2 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --encryption-services blob && az storage container create --name tfstate --account-name epicbooktfstate2 --auth-mode login
+  665  terraform init
+  666  az login && az group create --name tfstate2-rg --location eastus && az storage account create --name epicbooktfstate2 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --encryption-services blob && az storage container create --name tfstate --account-name epicbooktfstate2 --auth-mode login
+  667  az group create --name tfstate2-rg --location eastus && az storage account create --name epicbooktfstate2 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --encryption-services blob && az storage container create --name tfstate --account-name epicbooktfstate2 --auth-mode login
+  668  az group create --name tfstate2-rg --location eastus && az storage account create --name epicbooktfstate10 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --encryption-services blob && az storage container create --name tfstate --account-name epicbooktfstate10 --auth-mode login
+  669  az group create --name tfstate2-rg --location eastus && az storage account create --name epicbooktfstate10 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --encryption-services blob && az storage container create --name tfstate --account-name epicbooktfstate10
+  670  az group create --name tfstate2-rg --location eastus && az storage account create --name epicbooktfstate1029tanisha --resource-group tfstate2-rg --location eastus --sku Standard_LRS --encryption-services blob && az storage container create --name tfstate --account-name epicbooktfstate1029tanisha --auth-mode login
+  671  az group create --name tfstate2-rg --location eastus && az storage account create --name epicbooktfstate102 --resource-group tfstate2-rg --location eastus --sku Standard_LRS --encryption-services blob && az storage container create --name tfstate --account-name epicbooktfstate102 --auth-mode login
+  672  terraform init
+  673  terraform init -reconfigure
+  674  terraform apply
+  675  terraform workspace new dev
+  676  terraform apply
+  677  ./generate_inventory.sh
+  678  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-ddc90250   --rule-name allow-local-tanisha   --start-ip-address 49.43.2.126   --end-ip-address 49.43.2.126   
+  679  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-a50fabb7   --rule-name allow-local-tanisha   --start-ip-address 49.43.2.126   --end-ip-address 49.43.2.126   
+  680  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-ddc90250   --rule-name allow-epicbook-vm-private   --start-ip-address 4.213.58.185   --end-ip-address 4.213.58.185
+  681  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-a50fabb7   --rule-name allow-epicbook-vm-private   --start-ip-address 4.213.58.185   --end-ip-address 4.213.58.185
+  682  cd ..
+  683  cd ansible
+  684  ansible-playbook -i inventory.ini site.yml
+  685  ssh -i ~/ansible-onboarding/.ssh/id_rsa epicbookadmin@4.213.58.185
+  686  ansible-playbook -i inventory.ini site.yml
+  687  ssh -i ~/ansible-onboarding/.ssh/id_rsa epicbookadmin@4.213.58.185
+  688  ansible-playbook -i inventory.ini site.yml
+  689  ssh -i ~/ansible-onboarding/.ssh/id_rsa epicbookadmin@4.213.58.185
+  690  ansible-playbook -i inventory.ini site.yml
+  691  chmod 700 ~/.ssh
+  692  chmod 600 ~/.ssh/authorized_keys
+  693  chmod 600 ~/ansible-onboarding/.ssh/id_rsa
+  694  ansible-playbook -i inventory.ini site.yml
+  695  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-a50fabb7  --rule-name allow-epicbook-vm-private   --start-ip-address 10.0.2.0   --end-ip-address 10.0.2.0
+  696  ansible-playbook -i inventory.ini site.yml
+  697  sudo apt install ca-certificates -y
+  698  ansible-playbook -i inventory.ini site.yml
+  699  ssh -i /home/tanis/ansible-onboarding/.ssh/id_rsa epicbookadmin@4.213.58.185
+  700  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-ddc90250   --rule-name allow-epicbook-vm-private   --start-ip-address 4.213.58.185  --end-ip-address4.213.58.185 
+  701  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-ddc90250   --rule-name allow-epicbook-vm-private   --start-ip-address 4.213.58.185  --end-ip-address 4.213.58.185 
+  702  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group 4.213.58.185   --rule-name allow-epicbook-vm-private   --start-ip-address 4.213.58.185  --end-ip-address 4.213.58.185 
+  703  az mysql flexible-server firewall-rule create   --name bookstore   --resource-group dev-epicbook-rg-a50fabb7 --rule-name allow-epicbook-vm-private   --start-ip-address 4.213.58.185  --end-ip-address 4.213.58.185 
+  704  ansible-playbook -i inventory.ini site.yml
+  705  cd ..
+  706  cd epicbook_terraform
+  707  terraform destroy
+  708  . ~/.bashrc
+  709  history
+  710  source /home/tanis/ansible-onboarding/.venv/bin/activate
+  711  . ~/.bashrc
+  712  source /home/tanis/ansible-onboarding/.venv/bin/activate
+  713  cat ~/.bash_history
+  714  terraform apply | tee terraform_output.log
+  715  f grep -q '^#' ~/.bash_history 2>/dev/null; then perl -ne 'if(/^#(\d+)$/){$t=$1}else{if(defined $t && $t >= time()-2*86400){print scalar localtime($t), " $_"}}' ~/.bash_history; else tail -n 200 ~/.bash_history; fi
+  716  Get-History
+  717  history > commands.txt

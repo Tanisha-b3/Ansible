@@ -1,0 +1,12 @@
+---
+- name: Add Node.js 18.x repository
+  shell: curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+  args:
+    executable: /bin/bash   # use bash for pipe support
+  become: true              # ensures root access
+
+- name: Install Node.js
+  apt:
+    name: nodejs
+    state: present
+  become: true

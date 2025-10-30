@@ -1,0 +1,82 @@
+# ===========================================
+# Ansible + Terraform Project (.gitignore)
+# Project: EpicBook Deployment
+# ===========================================
+
+# --- SSH Keys and Credentials ---
+*.pem
+*.key
+*.crt
+*.csr
+*.pub
+*.id_rsa
+*.id_rsa.pub
+*.id_ecdsa
+*.id_ed25519
+*.vault_pass
+*.password
+*.secrets
+*.creds
+
+# --- Logs and Temporary Files ---
+*.retry
+*.log
+*.out
+*.tmp
+*.bak
+*.swp
+*.swo
+*.orig
+*.lock
+
+# --- Python / Cache ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.class
+
+# --- IDE / Editor Config ---
+.vscode/
+.idea/
+*.code-workspace
+
+# --- Output / Temp Folders ---
+tmp/
+logs/
+files/
+backups/
+
+# --- Terraform (Main Folder) ---
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/terraform.tfstate
+terraform/terraform.tfstate.*
+terraform/*.tfvars
+terraform/*.tfvars.json
+terraform/*.backup
+terraform/crash.log
+
+# --- Terraform (EpicBook Folder) ---
+epicbook_terraform/.terraform/
+epicbook_terraform/.terraform.lock.hcl
+epicbook_terraform/terraform.tfstate
+epicbook_terraform/terraform.tfstate.*
+epicbook_terraform/*.tfvars
+epicbook_terraform/*.tfvars.json
+epicbook_terraform/*.backup
+epicbook_terraform/crash.log
+
+# --- Python Virtual Environments ---
+venv/
+.venv/
+.env/
+.envrc
+Pipfile.lock
+
+# --- Misc / System Files ---
+Thumbs.db
+.DS_Store
+.ansible/
+.ssh/
+.idea/

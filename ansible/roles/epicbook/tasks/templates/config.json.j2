@@ -1,0 +1,28 @@
+{
+  "development": {
+    "username": "{{ mysql_username }}",
+    "password": "{{ mysql_password }}",
+    "database": "bookstore",
+    "host": "{{ mysql_host }}",
+    "dialect": "mysql",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  },
+  "production": {
+    "username": "{{ mysql_username }}",
+    "password": "{{ mysql_password }}",
+    "database": "bookstore",
+    "host": "{{ mysql_host }}",
+    "dialect": "mysql",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  }
+}

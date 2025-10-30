@@ -1,0 +1,15 @@
+---
+- name: Update system packages
+  apt:
+    update_cache: yes
+    upgrade: yes
+
+- name: Install essential packages
+  apt:
+    name:
+      - nginx
+      - git
+      - mysql-client
+      - curl
+      - build-essential
+    state: present

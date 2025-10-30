@@ -1,0 +1,23 @@
+---
+- name: Deploy EpicBook App on Azure VM
+  hosts: web
+  become: yes
+  vars:
+    repo_url: "https://github.com/Tanisha-b3/theepicbook.git"
+    branch: main
+    mysql_host: bookstore.mysql.database.azure.com
+    mysql_username: epicbookadmin
+    mysql_password: "Epicbook@2025!"
+    mysql_db_name: bookstore
+    mysql_port: 3306
+    db_schema_path: /apt/epicbook/db/BuyTheBook_Schema.sql
+    db_author_seed: /apt/epicbook/db/author_seed.sql
+    db_books_seed: /apt/epicbook/db/books_seed.sql
+
+  roles:
+    - common
+    - nodejs
+    - epicbook
+    - mysql
+    - nginx
+
