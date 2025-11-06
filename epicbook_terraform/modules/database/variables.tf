@@ -35,3 +35,7 @@ variable "db_sku_name" {
 variable "tags" {
   type = map(string)
 }
+
+variable "backend_ip" {
+  type = string
+}

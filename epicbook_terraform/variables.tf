@@ -13,7 +13,7 @@ variable "db_admin_password" {
 variable "epicbook_repo_url" {
   description = "GitHub repository URL for EpicBook"
   type        = string
-  default     = "https://github.com/your-username/epicbook.git"
+  default     = "https://github.com=/Tanisha-b3/epicbook.git"
 }
 
 variable "epicbook_branch" {

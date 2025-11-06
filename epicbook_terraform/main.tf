@@ -22,24 +22,6 @@ module "network" {
   tags               = local.workspace_config.tags
 }
 
-# Database Module
-module "database" {
-  source = "./modules/database"
-
-  resource_group_name = azurerm_resource_group.main.name
-  location           = local.workspace_config.location
-  mysql_server_name  = local.resource_names.mysql_server
-  mysql_subnet_id    = module.network.mysql_subnet_id
-  private_dns_zone_id = module.network.private_dns_zone_id
-  db_admin_username  = var.db_admin_username
-  db_admin_password  = var.db_admin_password
-  db_sku_name        = local.workspace_config.db_sku_name
-  tags               = local.workspace_config.tags
-
-  # ADD THIS LINE to ensure network is ready before database
-  depends_on = [module.network]
-}
-
 # Compute Module
 module "compute" {
   source = "./modules/compute"
@@ -56,6 +38,23 @@ module "compute" {
   epicbook_repo_url  = var.epicbook_repo_url
   epicbook_branch    = var.epicbook_branch
   tags               = local.workspace_config.tags
+}
+
+module "database" {
+  source = "./modules/database"
+
+  resource_group_name = azurerm_resource_group.main.name
+  location           = local.workspace_config.location
+  mysql_server_name  = local.resource_names.mysql_server
+  mysql_subnet_id    = module.network.mysql_subnet_id
+  private_dns_zone_id = module.network.private_dns_zone_id
+  db_admin_username  = var.db_admin_username
+  db_admin_password  = var.db_admin_password
+  db_sku_name        = local.workspace_config.db_sku_name
+  tags               = local.workspace_config.tags
+  backend_ip         = module.compute.vm_public_ip
+  
+  depends_on = [module.network]
 }
 
 # Resource Group

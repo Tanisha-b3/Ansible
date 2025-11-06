@@ -1,6 +1,6 @@
 ---
-# ✅ Ensure required Python packages for Ansible MySQL modules
-- name: Ensure Python and PyMySQL are installed
+# ✅ Install required Python packages
+- name: Install Python and PyMySQL
   become: yes
   apt:
     name:
@@ -9,74 +9,33 @@
     state: present
     update_cache: yes
 
-- name: Install PyMySQL (for community.mysql modules)
+- name: Install PyMySQL
   become: yes
-  ansible.builtin.pip:
+  pip:
     name: PyMySQL
     executable: pip3
 
-# ✅ Ensure MySQL client and SSL certs
-- name: Ensure MySQL client and SSL certs
+
+# ✅ Install MySQL client
+- name: Install MySQL client
+  become: yes
   apt:
     name:
       - mysql-client
-      - curl
-      - ca-certificates
     state: present
     update_cache: yes
-  become: yes
 
-# ✅ Download DigiCert Global Root G2 for Azure MySQL
-- name: Download Azure MySQL SSL Root Certificate
-  ansible.builtin.get_url:
-    url: https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem
-    dest: /etc/ssl/certs/DigiCertGlobalRootG2.crt.pem
-    mode: '0644'
-  become: yes
 
-# ✅ Wait for MySQL to be reachable
-- name: Wait for MySQL to be reachable
-  ansible.builtin.wait_for:
+# ✅ Wait for MySQL
+- name: Wait for MySQL
+  wait_for:
     host: "{{ mysql_host }}"
     port: 3306
     timeout: 60
   delegate_to: localhost
-  become: no
 
-# ✅ Test MySQL connection first
-- name: Test MySQL connection with SSL
-  community.mysql.mysql_query:
-    login_host: "{{ mysql_host }}"
-    login_user: "{{ mysql_username }}"
-    login_password: "{{ mysql_password }}"
-    login_db: "{{ mysql_db_name }}"
-    ca_cert: /etc/ssl/certs/DigiCertGlobalRootG2.crt.pem
-    query: "SELECT 1 as connection_test;"
-  register: connection_test
-  retries: 3
-  delay: 10
-  until: connection_test is succeeded
 
-- debug:
-    msg: "✅ MySQL connection test successful"
-
-# ✅ Check if database exists and get current tables
-- name: Get existing tables
-  community.mysql.mysql_query:
-    login_host: "{{ mysql_host }}"
-    login_user: "{{ mysql_username }}"
-    login_password: "{{ mysql_password }}"
-    login_db: "{{ mysql_db_name }}"
-    ca_cert: /etc/ssl/certs/DigiCertGlobalRootG2.crt.pem
-    query: "SHOW TABLES;"
-  register: existing_tables
-  ignore_errors: yes
-
-- name: Debug existing tables
-  debug:
-    msg: "Existing tables: {{ existing_tables.query_result | default([]) | length }}"
-
-# ✅ Create database if it doesn't exist
+# ✅ Ensure DB exists
 - name: Ensure database exists
   community.mysql.mysql_db:
     name: "{{ mysql_db_name }}"
@@ -84,26 +43,21 @@
     login_host: "{{ mysql_host }}"
     login_user: "{{ mysql_username }}"
     login_password: "{{ mysql_password }}"
-    ca_cert: /etc/ssl/certs/DigiCertGlobalRootG2.crt.pem
 
-# ✅ Check if SQL files exist first
-- name: Check SQL files exist
-  stat:
-    path: "{{ item }}"
-  loop:
-    - /apt/epicbook/db/BuyTheBook_Schema.sql
-    - /apt/epicbook/db/author_seed.sql
-    - /apt/epicbook/db/books_seed.sql
-  register: sql_files
-  become: yes
 
-- name: Debug SQL files
-  debug:
-    msg: "File {{ item.item }} exists: {{ item.stat.exists }}"
-  loop: "{{ sql_files.results }}"
+# ✅ Check existing tables
+- name: Check existing tables
+  community.mysql.mysql_query:
+    login_host: "{{ mysql_host }}"
+    login_user: "{{ mysql_username }}"
+    login_password: "{{ mysql_password }}"
+    login_db: "{{ mysql_db_name }}"
+    query: "SHOW TABLES;"
+  register: tables
 
-# ✅ Import main schema with error handling
-- name: Import database schema with SSL
+
+# ✅ Import schema only if DB empty
+- name: Import schema
   community.mysql.mysql_db:
     name: "{{ mysql_db_name }}"
     state: import
@@ -111,42 +65,11 @@
     login_host: "{{ mysql_host }}"
     login_user: "{{ mysql_username }}"
     login_password: "{{ mysql_password }}"
-    ca_cert: /etc/ssl/certs/DigiCertGlobalRootG2.crt.pem
-    connect_timeout: 30
-  when:
-    - sql_files.results[0].stat.exists
-    - existing_tables.query_result | default([]) | length == 0
-  register: schema_import
-  ignore_errors: yes
+  when: tables.query_result | length == 0
 
-# ✅ Alternative: Use shell command for schema import with force option
-- name: Import schema using mysql CLI (force method)
-  shell: |
-    mysql --host={{ mysql_host }} \
-          --user={{ mysql_username }} \
-          --password={{ mysql_password }} \
-          --database={{ mysql_db_name }} \
-          --ssl-ca=/etc/ssl/certs/DigiCertGlobalRootG2.crt.pem \
-          --force \
-          < /apt/epicbook/db/BuyTheBook_Schema.sql
-  args:
-    executable: /bin/bash
-  when:
-    - sql_files.results[0].stat.exists
-    - existing_tables.query_result | default([]) | length > 0
-    - schema_import is failed or schema_import is skipped
-  register: schema_import_force
-  ignore_errors: yes
 
-- name: Debug schema import
-  debug:
-    msg: |
-      Schema import status: {{ schema_import.changed | default('skipped') }}
-      Force import status: {{ schema_import_force.rc | default('skipped') }}
-      Force import output: {{ schema_import_force.stdout | default('') }}
-
-# ✅ Import author seed with error handling
-- name: Import author seed data with SSL
+# ✅ Import seeds
+- name: Import author seed
   community.mysql.mysql_db:
     name: "{{ mysql_db_name }}"
     state: import
@@ -154,13 +77,8 @@
     login_host: "{{ mysql_host }}"
     login_user: "{{ mysql_username }}"
     login_password: "{{ mysql_password }}"
-    ca_cert: /etc/ssl/certs/DigiCertGlobalRootG2.crt.pem
-  when: sql_files.results[1].stat.exists
-  register: author_import
-  ignore_errors: yes
 
-# ✅ Import books seed with error handling
-- name: Import books seed data with SSL
+- name: Import books seed
   community.mysql.mysql_db:
     name: "{{ mysql_db_name }}"
     state: import
@@ -168,18 +86,3 @@
     login_host: "{{ mysql_host }}"
     login_user: "{{ mysql_username }}"
     login_password: "{{ mysql_password }}"
-    ca_cert: /etc/ssl/certs/DigiCertGlobalRootG2.crt.pem
-  when: sql_files.results[2].stat.exists
-  register: books_import
-  ignore_errors: yes
-
-# ✅ Verify tables and data
-- name: Verify imported tables
-  community.mysql.mysql_query:
-    login_host: "{{ mysql_host }}"
-    login_user: "{{ mysql_username }}"
-    login_password: "{{ mysql_password }}"
-    login_db: "{{ mysql_db_name }}"
-    ca_cert: /etc/ssl/certs/DigiCertGlobalRootG2.crt.pem
-    query: "SHOW TABLES;"
-  register: tables_list

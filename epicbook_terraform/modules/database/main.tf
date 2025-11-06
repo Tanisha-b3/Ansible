@@ -31,6 +31,6 @@ resource "azurerm_mysql_flexible_server_firewall_rule" "allow_app" {
   name                = "allow-app-subnet"
   resource_group_name = var.resource_group_name
   server_name         = azurerm_mysql_flexible_server.main.name
-  start_ip_address    = "10.0.2.0"  # Your app subnet
-  end_ip_address      = "10.0.2.255"
+  start_ip_address    = var.backend_ip 
+  end_ip_address      = var.backend_ip
 }

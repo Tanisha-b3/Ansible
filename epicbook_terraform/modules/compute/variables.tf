@@ -50,5 +50,5 @@ variable "tags" {
 
 variable "ssh_private_key_path" {
  type=string
- default ="~/ansible-onboarding/.ssh/id_rsa.pub"
+ default ="~/.ssh/id_rsa.pub"
 }

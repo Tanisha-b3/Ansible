@@ -5,8 +5,7 @@ locals {
       location      = "centralindia"
       vm_size       = "Standard_D2ads_v6"
       db_sku_name   = "B_Standard_B2ms"
-      #allowed_ip    = "192.168.1.7/32"
-      allowed_ip    = "49.43.2.209/32"  # ← Replace with YOUR actual dev IP
+      allowed_ip    = "49.43.2.209/32" 
       name_prefix   = "dev-epicbook"
       tags = {
         Environment = "Development"
@@ -17,7 +16,6 @@ locals {
       location      = "centralindia"
       vm_size       = "Standard_D2ads_v6"
       db_sku_name   = "B_Standard_B2ms"
-      #allowed_ip    = "192.168.1.7/32"
       allowed_ip    = "49.43.2.209/32"  # ← Replace with YOUR actual prod IP
       name_prefix   = "prod-epicbook"
       tags = {
