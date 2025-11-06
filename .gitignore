@@ -62,8 +62,8 @@ epicbook_terraform/.terraform/
 epicbook_terraform/.terraform.lock.hcl
 epicbook_terraform/terraform.tfstate
 epicbook_terraform/terraform.tfstate.*
-epicbook_terraform/*.tfvars
-epicbook_terraform/*.tfvars.json
+# epicbook_terraform/*.tfvars
+# epicbook_terraform/*.tfvars.json
 epicbook_terraform/*.backup
 epicbook_terraform/crash.log
 
